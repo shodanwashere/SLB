@@ -18,13 +18,11 @@ jobs:
   bearer:
     needs: build
     runs-on: ubuntu-latest
-    container:
-      image: bearer/bearer:latest-amd64
-    env:
-      GITHUB_WORKSPACE: "/tmp/scan"
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Scan
-      run: bearer scan /tmp/scan
+    - name: Install Bearer
+      run: curl -sfL https://raw.githubusercontent.com/Bearer/bearer/main/contrib/install.sh | sh
+    - name: Run Scan
+      run: ~/.bin/bearer scan $GITHUB_WORKSPACE
   
