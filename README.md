@@ -2,6 +2,7 @@
 Shodan's Loading Bar. Based on the one present in STrafAn.
 
 ![Pipeline](https://github.com/shodanwashere/slb/actions/workflows/pipeline.yml/badge.svg)
+[![HitCount](https://hits.dwyl.com/shodanwashere/slb.svg)](https://hits.dwyl.com/shodanwashere/slb)
 ## Example of usage
 Java:
 ```java
