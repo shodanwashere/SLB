@@ -8,15 +8,22 @@ on:
     - main
 
 jobs:
-  build-java:
+  check-java:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Build
       run: javac LoadingBar.java
+  check-python:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Syntax Check
+      run: python3 -m py_compile loadingBar.py
   bearer:
-    needs: build-java
+    needs: check-java, check-python
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
