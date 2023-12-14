@@ -24,5 +24,10 @@ jobs:
     - name: Install Bearer
       run: curl -sfL https://raw.githubusercontent.com/Bearer/bearer/main/contrib/install.sh | sh
     - name: Run Scan
-      run: ~/.bin/bearer scan $GITHUB_WORKSPACE
+      run: ./bin/bearer scan $GITHUB_WORKSPACE --report security --output report.json
+    - name: Save Report to Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: bearer-report
+        path: ./report.json
   
