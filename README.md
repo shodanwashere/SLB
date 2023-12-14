@@ -1,7 +1,7 @@
 # SLB
 Shodan's Loading Bar. Based on the one present in STrafAn.
 
-![Java](https://github.com/shodanwashere/slb/actions/workflows/java.yml/badge.svg)
+![Pipeline](https://github.com/shodanwashere/slb/actions/workflows/pipeline.yml/badge.svg)
 ## Example of usage
 Java:
 ```java
