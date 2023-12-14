@@ -1,5 +1,6 @@
 # SLB
 Shodan's Loading Bar. Based on the one present in STrafAn.
+
 ![Main Workflow](https://github.com/shodanwashere/slb/actions/workflows/main.yml/badge.svg)
 ## Example of usage
 Java:
