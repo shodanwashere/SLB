@@ -1,4 +1,4 @@
-name: Java Checkout
+name: Java
 on:
   push:
     branches:
@@ -16,12 +16,15 @@ jobs:
     - name: Build
       run: javac LoadingBar.java
   bearer:
+    needs: build
     runs-on: ubuntu-latest
     container:
       image: bearer/bearer:latest-amd64
+    env:
+      GITHUB_WORKSPACE: "/tmp/scan"
     steps:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Scan
-      run: bearer scan .
+      run: bearer scan /tmp/scan
   
