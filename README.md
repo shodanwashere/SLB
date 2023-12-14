@@ -37,3 +37,16 @@ for i in {1..100}; do
   SLB::show_loading_bar
 done
 ```
+
+ANSI-C:
+```c
+#include "loading_bar.h"
+
+LoadingBar lb;
+int nr_ops = 100;
+lb_init_loadbar(&lb, nr_ops);
+for(int status = 0; status < nr_ops; status++){
+  lb_update_curr_status(&lb, status);
+  lb_show_loading_bar(&lb);
+}
+```
