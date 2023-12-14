@@ -16,7 +16,7 @@ jobs:
     - name: Build
       run: javac LoadingBar.java
   bearer:
-    needs: build
+    needs: build-java
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
