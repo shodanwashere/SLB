@@ -1,4 +1,4 @@
-name: Java
+name: pipeline
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ on:
     - main
 
 jobs:
-  build:
+  build-java:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
