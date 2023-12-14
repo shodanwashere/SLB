@@ -25,3 +25,15 @@ for i in range(0, nrOps):
   ops_lb.update_curr_status(i)
   ops_lb.show_loading_bar()
 ```
+
+Bash:
+To use the functions in the Bash version, copy them over to your script beforehand.
+```sh
+status=0
+SLB::set_total_perc 100
+for i in {1..100}; do
+  status=$i
+  SLB::update_curr_status $status
+  SLB::show_loading_bar
+done
+```
