@@ -8,6 +8,17 @@ on:
     - main
 
 jobs:
+  check-bash:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install Shellcheck
+      uses: ConorMacBride/install-package@v1
+      with:
+        apt: shellcheck
+    - name: Syntax check the Bash version
+      run: shellcheck $GITHUB_WORKSPACE/loading_bar.sh
   check-java:
     runs-on: ubuntu-latest
     steps:
