@@ -23,7 +23,7 @@ public class LoadingBar {
       else
         System.out.print(" ");
     }
-    String perc = new String(get_perc().toString()+"%");
+    String perc = new String(String.getValueOf(get_perc())+"%");
     System.out.print(perc);
     for(int j = 3+perc.length(); j <= 10; j++){
       if(j < (get_perc() / 10))
