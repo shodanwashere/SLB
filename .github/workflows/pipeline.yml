@@ -23,7 +23,7 @@ jobs:
     - name: Syntax Check
       run: python3 -m py_compile loadingBar.py
   bearer:
-    needs: check-java, check-python
+    needs: [check-java, check-python]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
