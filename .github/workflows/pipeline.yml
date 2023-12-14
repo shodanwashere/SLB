@@ -8,6 +8,13 @@ on:
     - main
 
 jobs:
+  check-gcc:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: GCC Syntax Check
+      run: gcc -fsyntax-only $GITHUB_WORKSPACE/loading_bar.h
   check-bash:
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +41,7 @@ jobs:
     - name: Syntax Check
       run: python3 -m py_compile loadingBar.py
   bearer:
-    needs: [check-java, check-python]
+    needs: [check-java, check-python, check-gcc]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
